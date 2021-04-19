@@ -1,0 +1,55 @@
+package learn;
+
+public class Student {
+	
+// Attribute
+	
+	private String Name;
+	
+	private int Age;
+	
+	private String ClassName;
+	
+	private Mark mark;
+
+//	Method
+	public Student() {
+		this("", 0, "");
+	}
+	
+	public Student(String Name, int Age, String ClassName) {
+		this.Name = Name;
+		this.Age = Age;
+		this.ClassName = ClassName;
+	}
+	
+//	getter
+	public String GetName() {
+		return this.Name;
+	}
+	
+	public int GetAge() {
+		return this.Age;
+	}
+	
+	public String GetClassName() {
+		return this.ClassName;
+	}
+// setter
+	
+	public void SetName(String Name) {
+		this.Name = Name;
+	}
+	
+	public void SetAge(int Age) {
+		this.Age = Age;
+	}
+	
+	public void SetClassName(String ClassName) {
+		this.ClassName = ClassName;
+	}
+	
+	public void ShowInfo() {
+		System.out.println("Name:" + this.Name + "\nAge:" + this.Age + "\nClassName:" + this.ClassName + "\n" );
+	}
+}

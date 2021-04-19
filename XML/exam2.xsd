@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/exam2" xmlns:tns="http://www.example.org/exam2" elementFormDefault="qualified">
+	<element name="Menu">
+		<complexType>
+			<sequence>
+				<element name="Food" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="Name">
+								<simpleType>
+									<restriction base="string">
+										<maxLength value="30"/>
+									</restriction>
+								</simpleType>
+							</element>
+							
+							<element name="Price">
+								<simpleType>
+									<restriction base="string">
+										<pattern value="$[\d]+"></pattern>
+									</restriction>
+								</simpleType>
+							</element>
+							
+							<element name="Description">
+								<simpleType>
+									<restriction base="string">
+										<minLength value="50"/>
+										<maxLength value="100"/>
+									</restriction>
+								</simpleType>
+							</element>
+							
+							<element name="Calories">
+								<simpleType>
+									<restriction base="positiveInteger">
+										<pattern value="[\d]+"></pattern>
+									</restriction>
+								</simpleType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

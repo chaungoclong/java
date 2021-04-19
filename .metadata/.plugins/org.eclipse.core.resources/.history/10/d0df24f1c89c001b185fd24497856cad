@@ -1,0 +1,14 @@
+package learn;
+
+public abstract class Animals {
+	protected String Name;
+	protected float Weight;
+	
+	public Animals(String Name, float Weight) {
+		this.Name = Name;
+		this.Weight = Weight;
+	}
+	
+	public abstract void Speak();
+	public abstract void run();
+}

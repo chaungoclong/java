@@ -1,0 +1,66 @@
+package learn;
+
+public class Student {
+	
+// Attribute
+	private static int ms = 0;
+	
+	private String Name;
+	
+	private int Age;
+	
+	private String ClassName;
+	
+
+//	Method
+	public Student() {
+		this.ms += 1;
+		this.Name = "";
+		this.Age = 0;
+		this.ClassName = "";
+	}
+	
+	public Student(String Name, int Age, String ClassName) {
+		this.ms += 1;
+		this.Name = Name;
+		this.Age = Age;
+		this.ClassName = ClassName;
+	}
+	
+//	getter
+	public String GetName() {
+		return this.Name;
+	}
+	
+	public int GetAge() {
+		return this.Age;
+	}
+	
+	public String GetClassName() {
+		return this.ClassName;
+	}
+// setter
+	
+	public void SetName(String Name) {
+		this.Name = Name;
+	}
+	
+	public void SetAge(int Age) {
+		this.Age = Age;
+	}
+	
+	public void SetClassName(String ClassName) {
+		this.ClassName = ClassName;
+	}
+	
+	public void ShowInfo() {
+		System.out.println("ID:" + this.ms + "\nName:" + this.Name + "\nAge:" + this.Age + "\nClassName:" + this.ClassName + "\n" );
+	}
+	
+	public static void main(String[] abc) {
+		Student a = new Student();
+		Student b = new Student();
+		a.ShowInfo();
+		b.ShowInfo();
+	}
+}

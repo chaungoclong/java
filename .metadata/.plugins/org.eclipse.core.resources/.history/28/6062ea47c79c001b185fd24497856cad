@@ -1,0 +1,10 @@
+package learn;
+import basic.Execute;
+
+public class RunAmimals extends Execute{
+
+	public static void main(String[] args) {
+		echo("hello");
+	}
+
+}

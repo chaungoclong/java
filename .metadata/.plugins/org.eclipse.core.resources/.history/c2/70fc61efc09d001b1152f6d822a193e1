@@ -1,0 +1,98 @@
+package learn;
+import java.util.*;
+import java.io.*;
+
+public class Manager {
+	private ArrayList<Student> ListStudents;
+	private Scanner Scan = new Scanner(System.in);
+	
+	public Manager() {
+		this.ListStudents = new ArrayList<Student>();
+	}
+	
+	//add student
+	public void AddStudent() {
+		System.out.println("====Add New Student====\n");
+		Student tmp = this.InputStudent();
+		
+		try {
+			this.ListStudents.add(tmp);
+			System.out.println("> (add student success)");
+			
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	//display student
+	public void DisplayListStudent() {
+		for (Student student : ListStudents) {
+			student.ShowInfo();
+		}
+	}
+	//edit student
+	
+	//delete student
+	
+	public Student InputStudent() {
+		System.out.println("Name >");
+		String Name = Scan.nextLine();
+		
+		System.out.println("Age >");
+		int Age = Scan.nextInt();
+		Scan.nextLine();
+		
+		System.out.println("ClassName >");
+		String ClassName = Scan.nextLine();
+		
+		Student tmp = new Student(Name, Age, ClassName);
+		return tmp;
+	}
+	
+	//search student by id
+	public void SearchByID() {
+		System.out.println("ID >");
+		int ID = Scan.nextInt();
+		Scan.nextLine();
+		
+		SearchByIDCore(ID);
+	}
+	
+	public void SearchByIDCore(int ID) {
+		try {
+			if(ID < 0) {
+				throw new NegativeException("ID > 0");
+			} else {
+				for (Student student : ListStudents) {
+					if(student.GetID() == ID) {
+						student.ShowInfo();
+					}
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	//search student by name
+		public void SearchByName() {
+			System.out.println("Name >");
+			String Name = Scan.nextLine();
+			System.out.println(Name);
+			SearchByNameCore(Name);
+		}
+		
+		public void SearchByNameCore(String Name) {
+			Name = Name.toLowerCase();
+			System.out.println(Name);
+			
+			
+			for (Student student : ListStudents) {
+				System.out.println(student.GetName());
+				System.out.println(student.GetName().toLowerCase() == Name);
+				if(student.GetName().toLowerCase() == Name) {
+					student.ShowInfo();
+				}
+			}
+		}
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:schema xmlns:a="http://www.w3.org/2001/XMLSchema">
+	<a:simpleType name="nameType">
+		<a:restriction base="a:string">
+			<a:maxLength value="30"/>
+		</a:restriction>
+	</a:simpleType>
+	
+	<a:simpleType name="priceType">
+		<a:restriction base="a:string">
+			<a:pattern value="$[\d]+"/>
+		</a:restriction>
+	</a:simpleType>
+	
+	<a:simpleType name="descType">
+		<a:restriction base="a:string">
+			<a:minLength value="50"/>
+			<a:maxLength value="100"/>
+		</a:restriction>
+	</a:simpleType>
+	
+	<a:simpleType name="caloType">
+		<a:restriction base="a:positiveInteger">
+			<a:pattern value="[\d]+"></a:pattern>
+		</a:restriction>
+	</a:simpleType>
+	
+	<a:simpleType name="attType">
+		<a:restriction base="a:string">
+			<a:enumeration value="Salad"/>
+			<a:enumeration value="Drinks"/>
+			<a:enumeration value="Desserts"/>
+			<a:enumeration value="Main_Course"/>
+		</a:restriction>
+	</a:simpleType>
+	
+	<a:complexType name="foodType">
+		<a:sequence>
+			<a:element name="Name" type="nameType"/>
+			<a:element name="Price" type="priceType"/>
+			<a:element name="Description" type="descType"/>
+			<a:element name="Calories" type="caloType"/>
+		</a:sequence>
+		<a:attribute name="Type" type="attType" use="required"/>
+	</a:complexType>
+	
+	<a:complexType name="menuType">
+		<a:sequence>
+			<a:element name="Food" type="foodType" maxOccurs="unbounded"/>
+		</a:sequence>
+	</a:complexType>
+	
+	<a:element name="Menu" type="menuType"/>
+</a:schema>

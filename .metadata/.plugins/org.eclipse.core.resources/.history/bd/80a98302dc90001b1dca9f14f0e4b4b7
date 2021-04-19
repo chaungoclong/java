@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Menu SYSTEM "exam.dtd">
+<Menu>
+	<Food Type="Salad">
+		<Name>Food 1</Name>
+		<Price>$100</Price>
+		<Description>OK</Description>
+		<Calories>100</Calories>
+	</Food>
+	
+	<Food Type="Main_Course">
+		<Name>Food 2</Name>
+		<Price>$200</Price>
+		<Description>OK</Description>
+		<Calories>200</Calories>
+	</Food>
+</Menu>

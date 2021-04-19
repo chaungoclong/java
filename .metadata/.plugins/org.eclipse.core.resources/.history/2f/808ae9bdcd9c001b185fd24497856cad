@@ -1,0 +1,19 @@
+package learn;
+import java.util.ArrayList;
+import basic.Execute;
+
+class IO {
+	
+}
+
+public class RunAmimals extends Execute{
+
+	public static void main(String[] args) {
+		ArrayList<Dog> ListDog = new ArrayList<Dog>();	
+		Dog a = new Dog("john", 20);
+		a.ShowInfo();
+		a.Speak();
+		a.run();
+	}
+
+}

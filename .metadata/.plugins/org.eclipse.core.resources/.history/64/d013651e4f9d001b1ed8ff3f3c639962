@@ -1,0 +1,15 @@
+package learn;
+
+public class Cat extends Animals {
+	public Cat(String Name, float Weight) {
+		super(Name, Weight);
+	}
+	
+	public void Speak() {
+		System.out.println("mew mew");
+	}
+	
+	public void run() {
+		System.out.println("cat run");
+	}
+}

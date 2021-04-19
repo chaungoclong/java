@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Menu (Food+)>
+<!ELEMENT Food (Name, Price, Description, Calories)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Calories (#PCDATA)>
+<!ATTLIST Food Type (Salad | Main_Course | Desserts | Drinks) #REQUIRED >

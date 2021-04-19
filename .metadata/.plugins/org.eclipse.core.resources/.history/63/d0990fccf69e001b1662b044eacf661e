@@ -1,0 +1,47 @@
+package inClass;
+import basic.Execute;
+import java.util.*;
+
+public class Main extends Execute{
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		Manager manager = new Manager();
+		char key = 'x';
+		
+		do {
+			menu();
+			key = scan.next().charAt(0);
+			scan.nextLine();
+			
+			switch (key) {
+			case '1':
+				echo ("add");
+				break;
+				
+			case '2':
+				echo ("show");
+				break;
+
+			case 'x':
+			case 'X':
+				break;
+				
+			default:
+				echo ("no option!!!\n");
+				break;
+			}
+		} while (key != 'x' && key != 'X');
+		
+
+	}
+	
+	public static void menu() {
+		echo ("=====MENU====="
+				+ "\n1-ADD"
+				+ "\n2-SHOW"
+				+ "\nX-BACK\n"
+		);
+	}
+
+}

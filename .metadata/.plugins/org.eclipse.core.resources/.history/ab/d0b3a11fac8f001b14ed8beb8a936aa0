@@ -1,0 +1,16 @@
+package basic;
+import java.util.HashMap;
+
+public class Hash_Map extends Execute {
+
+	public static void main(String[] args) {
+		HashMap<String, String> abc = new HashMap<String, String>();
+		abc.put("Name:", "Chau Ngoc Long");
+		abc.put("Name:", "Chau Ngoc Long");
+		for(String i : abc.keySet()) {
+			echo(i);
+		}
+
+	}
+
+}

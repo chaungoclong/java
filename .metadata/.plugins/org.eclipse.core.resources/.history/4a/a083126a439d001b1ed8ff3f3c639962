@@ -1,0 +1,54 @@
+package learn;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import basic.Execute;
+
+class IO<E> {
+	
+	public class WrapperClass<T> {
+		private T obj;
+		public WrapperClass(Class<T> classObject) throws InstantiationException, IllegalAccessException {
+			this.obj = (T) classObject.newInstance();
+		}
+		
+		public T getObj() {
+			return obj; 
+		}
+	}
+	
+	public void input(ArrayList<E> array) {
+	
+		char key = 'x';
+		Scanner s = new Scanner(System.in);
+		
+		do {
+			System.out.println("nhap thong tin\n");
+			
+			System.out.println("\nname:");
+			String Name = s.next();
+			
+			System.out.println("\nweight:");
+			float Weight = s.nextFloat();
+			
+			WrapperClass<E> tmp = new WrapperClass<E>(E.class);
+			
+			array.add();
+			System.out.println("x for back --- any key for continue");
+			key = s.next().charAt(0);
+			s.nextLine();
+		} while(key != 'x');
+	}
+}
+
+public class RunAmimals extends Execute{
+
+	public static void main(String[] args) {
+		ArrayList<Dog> ListDog = new ArrayList<Dog>();	
+		Dog a = new Dog("john", 20);
+		a.ShowInfo();
+		a.Speak();
+		a.run();
+	}
+
+}

@@ -1,0 +1,14 @@
+package learn;
+import basic.Execute;
+
+public class Main extends Execute {
+
+	public static void main(String[] args) {
+		Menu();
+	}
+	
+	public static void Menu() {
+		echo("===========MENU==============\n1-Add Student\n2-Edit student\n3-Delete Student\n0-Exit\n");
+	}
+
+}

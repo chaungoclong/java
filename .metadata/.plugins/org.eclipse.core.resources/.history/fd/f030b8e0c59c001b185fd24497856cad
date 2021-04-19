@@ -1,0 +1,5 @@
+package learn;
+
+public abstract class Animals {
+
+}

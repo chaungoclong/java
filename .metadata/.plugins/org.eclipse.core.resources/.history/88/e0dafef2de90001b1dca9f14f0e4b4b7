@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="exam.xsd">
+  <Food Type="Salad">
+    <Name>Name</Name>
+    <Price>$100</Price>
+    <Description>Descriptionderewrtetrtrryrutyuitutyutyutyuytuytutyuytutyutyuty</Description>
+    <Calories>1</Calories>
+  </Food>
+  
+  <Food Type="Salad">
+    <Name>Namedddddddddddddddddddddddddssss</Name>
+    <Price>$100</Price>
+    <Description>Descriptionderewrtetrtrryrutyuitutyutyutyuytuytutyuytutyutyuty</Description>
+    <Calories>1</Calories>
+  </Food>
+  
+  <Food Type="Salad">
+    <Name>Name</Name>
+    <Price>$100</Price>
+    <Description>Descriptionderewrtetrtrryrutyuitutyutyutyuytuytutyuytutyutyuty</Description>
+    <Calories>1</Calories>
+  </Food>
+</Menu>

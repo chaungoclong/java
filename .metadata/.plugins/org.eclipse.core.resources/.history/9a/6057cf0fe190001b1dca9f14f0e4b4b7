@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menu xmlns="http://www.example.org/exam2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/exam2 exam2.xsd ">
+  <Food>
+    <Name>Name</Name>
+    <Price>$100</Price>
+    <Description>DescriptionDescriptionDescriptionDescriptionDescriptionDescription</Description>
+    <Calories>1232</Calories>
+  </Food>
+</Menu>

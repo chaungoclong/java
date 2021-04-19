@@ -1,0 +1,15 @@
+package learn;
+
+public class RunAmimals {
+	public static void main(String[] abc) {
+		try {
+			Class cls = Class.forName("Dog");
+			Dog a = (Dog) cls.newInstance();
+			a.Name = "a";
+			a.Weight = 10;
+			System.out.println(a.Name);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}
