@@ -1,5 +1,6 @@
 package inClass;
 import java.util.*;
+import java.sql.*;
 import basic.Execute;
 
 public class Manager extends Execute{
@@ -18,6 +19,35 @@ public class Manager extends Execute{
 			try {
 				Student newStudent = inputStudent();
 				ListStudents.add(newStudent);
+				
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_java", "long", "tnt");
+					
+					String SQL = "insert into student(stu_name, stu_c, stu_php, stu_avg, stu_rank)"
+							+ "values(" 
+							+ "'" +newStudent.getName() + "'," 
+							+ newStudent.getC() + "," 
+							+ newStudent.getPHP() + ","
+							+ newStudent.getMarkAVG() + ","
+							+ "'" +newStudent.getRank()
+							+ "')";
+					echo (SQL);
+					
+					Statement stmt = con.createStatement();
+					boolean status = stmt.execute(SQL);
+					echo ("\nstatus: " + status + "\n");
+					
+					if (!status) {
+						echo ("add to database success\n");
+					} else {
+						echo ("add to database fail\n");
+					}
+					
+					con.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				
 				echo ("add success!\n1-Continue\t0-exit\n>");
 				
