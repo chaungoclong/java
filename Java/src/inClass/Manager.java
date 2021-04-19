@@ -130,6 +130,17 @@ public class Manager extends Execute{
 		}
 	}
 	
+	// search student
+	public void searchStudents() {
+		echo ("ID or Name for search >");
+		String strForSearch = scan.nextLine();
+		int[] listIndexsForSearch = returnIndexsOfStudent(strForSearch);
+		
+		for (int i = 0; i < listIndexsForSearch.length; i++) {
+			
+		}
+	}
+	
 	// return index of student
 	public int[] returnIndexsOfStudent(String strForSearch) {
 		int ID = 0;
