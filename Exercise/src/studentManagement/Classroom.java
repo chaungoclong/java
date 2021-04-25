@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Classroom {
 	private int classId;
-	private int idForUpdate;
+	private String condition;
 	private String className;
 	private Database conn = new Database("localhost", "3306", "long", "tnt", "student_java");
 //	private Scanner in = new Scanner(System.in);
@@ -28,9 +28,9 @@ public class Classroom {
 	public void setClassId(int classId) {
 		this.classId = classId;
 	}
-	
-	public void setIdForUpdate(int idForUpdate) {
-		this.idForUpdate = idForUpdate;
+
+	public void setCondition(String condition) {
+		this.condition = condition;
 	}
 
 	public String getClassName() {
@@ -51,19 +51,17 @@ public class Classroom {
 		}
 	}
 
-	public void show() {
+	public ArrayList<HashMap<String, String>> showAll() {
 		System.out.println("___LIST OF CLASS___\n");
 		String sql = "select * from db_class";
 		ArrayList<HashMap<String, String>> rs = this.conn.query(sql).getResult();
-		for (HashMap<String, String> eachClass : rs) {
-			System.out.println("id:" + eachClass.get("cls_id") + "\tName:" + eachClass.get("cls_name") + "\n");
-		}
+		return rs;
 	}
 
 	public void update() {
 		try {
 			String sql = "update db_class set db_class.cls_name = '" + className + "' where db_class.cls_id = "
-					+ idForUpdate;
+					+ this.condition;
 			this.conn.query(sql);
 			System.out.println("update success\n");
 		} catch (Exception e) {
@@ -72,28 +70,36 @@ public class Classroom {
 
 	}
 
-//	public String inputNameOfClass() throws Exception {
-//		try {
-//			System.out.print("the name of the class >");
-//			String className = in.nextLine();
-//			return className;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return null;
-//		}
-//	}
-//
-//	public int inputIdOfClass() throws Exception {
-//		try {
-//			System.out.print("the id of the class >");
-//			int idClass = in.nextInt();
-//			in.nextLine();
-//			return idClass;
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			in.nextLine();
-//			return 0;
-//		}
-//	}
+	public void delete() {
+		try {
+			String sql = "delete from db_class where cls_id = " + this.condition;
+			this.conn.query(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	public ArrayList<HashMap<String, String>> search() {
+		try {
+			String sql = "select * from db_class where concat_ws(cls_id, cls_name) like('%" + this.condition + "%')";
+			ArrayList<HashMap<String, String>> rs = this.conn.query(sql).getResult();
+
+			return rs;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public ArrayList<HashMap<String, String>> sort(String orderByColumn, String mode) {
+		try {
+			String sql = "select * from db_class order by " + orderByColumn + " " + mode;
+			ArrayList<HashMap<String, String>> rs = this.conn.query(sql).getResult();
+			return rs;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
