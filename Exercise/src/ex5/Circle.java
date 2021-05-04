@@ -1,16 +1,27 @@
 package ex5;
 
 public class Circle extends Shape {
+	private double radius;
+	private final double PI = 3.14;
 
 	public Circle() {
 		super();
 	}
 
 	public Circle(double radius) {
-		super(radius, radius);
+		super();
+		this.radius = radius;
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+
+	public void setRadius(double radius) {
+		this.radius = radius;
 	}
 
 	public double calculateSurface() {
-		return this.PI * Math.pow(this.width, 2);
+		return Math.pow(this.radius, 2) * this.PI;
 	}
 }
