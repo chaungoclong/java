@@ -9,9 +9,9 @@
 		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1" value="237"/>
 		<item key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2" value="762"/>
 		<item key="org.eclipse.debug.ui.EXPANDED_NODES" value="org.eclipse.jdt.launching.localJavaApplication, "/>
-		<item key="DIALOG_WIDTH" value="891"/>
-		<item key="DIALOG_HEIGHT" value="640"/>
-		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>
+		<item key="DIALOG_WIDTH" value="969"/>
+		<item key="DIALOG_HEIGHT" value="737"/>
+		<item key="DIALOG_FONT_NAME" value="1|Garuda|11.0|0|GTK|1|"/>
 	</section>
 	<section name="FAVORITES_DIALOG_SECTION">
 		<item key="DIALOG_X_ORIGIN" value="461"/>

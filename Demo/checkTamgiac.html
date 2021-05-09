@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    * {
+		box-sizing: border-box;
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		background: cyan;
+		width: 300px;
+		height: 300px;
+		justify-content: center;
+		align-items: center;
+	}
+	.wrapper form {
+
+	}
+
+	#wrapperRun {
+		height: 20px;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	#run {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+	}
+
+</style>
+
+<body>
+    <div class="wrapper">
+        <div id="wrapperRun">
+            <div id="run">
+                kiểm tra tam giác
+            </div>
+        </div>
+        <form action="">
+            <div>
+                <label for="a">cạnh a</label>
+                <input type="number" id="a">
+            </div>
+            <div>
+                <label for="b">cạnh b</label>
+                <input type="number" id="b">
+            </div>
+            <div>
+                <label for="c">cạnh c</label>
+                <input type="number" id="c">
+            </div>
+            <div>
+                <button id="btn">CHECK</button>
+            </div>
+        </form>
+    </div>
+    <script>
+    let btn = document.querySelector('#btn');
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        let a = parseFloat(document.querySelector('#a').value);
+        let b = parseFloat(document.querySelector('#b').value);
+        let c = parseFloat(document.querySelector('#c').value);
+
+        //console.log(a, b, c);
+        checkTypeOfTG(a, b, c);
+
+    });
+
+    function isTG(a, b, c) {
+        if (a + b > c && a + c > b && b + c > a) {
+            return true;
+        }
+        return false;
+    }
+
+    function checkTypeOfTG(a, b, c) {
+        if (isTG(a, b, c)) {
+
+            // kiem tra tam giac deu
+            if (a === b && a === c) {
+                alert("tam giac deu");
+            } else if (a === b || a === c || b === c) {
+                alert("tam giac can");
+            } else if (a * a === b * b + c * c || b * b === a * a + c * c || c * c === a * a + b * b) {
+                alert("tam giac vuong");
+            } else {
+                alert("tam giac thuong");
+            }
+        } else {
+            alert("day khong phai tam giac");
+        }
+    }
+
+    function run() {
+        //document.querySelector('#run').style.left = '0px';
+        let child = document.querySelector('#run');
+        let parent = document.querySelector('#wrapperRun');
+
+        let x = child.offsetLeft;
+        if (x === parent.offsetWidth) {
+            child.style.left = '0px';
+        } else {
+            ++x;
+            child.style.left = x + 'px';
+        }
+
+        setTimeout(run, 10);
+
+    }
+    run();
+    </script>
+</body>
+
+</html>
