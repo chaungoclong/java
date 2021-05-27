@@ -75,7 +75,7 @@ public class Database {
 	// run
 	public Database query(String sql) {
 		try {
-			this.open();
+			//this.open();
 			if (this.stmt.execute(sql)) {
 				this.result = this.stmt.getResultSet();
 				this.resultTbl = new ArrayList<HashMap<String, String>>();
@@ -97,7 +97,7 @@ public class Database {
 				}
 
 			}
-			this.close();
+			//this.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

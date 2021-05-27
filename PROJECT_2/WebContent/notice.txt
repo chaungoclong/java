@@ -1,0 +1,12 @@
+#. Tên servlet(controller) nên hạn chế trùng với tên thư mục chứa views => tên thư mục chứa views = tên servlet + s.
+
+#. nếu đường dẫn đến Servlet trùng với đường dẫn đến một tệp thì tệp đó có thể sẽ được mở và Servlet không chạy,
+nếu tệp đó là tệp JSP nó sẽ bị lỗi.
+
+#. khi sendRedirect đến một trang khác nó sẽ thêm đường dẫn vào phần đường dẫn hiện tại => nên dùng cả đường dẫn gốc /.
+
+# sendredirect: chuyển đến 1 đường dẫn nào đó
+# getRequestDispatcher : gửi nội dung đến 1 file jsp nào đó (load view)
+# đường dẫn: http://localhost:8081/PROJECT_2/class/list
+=> controller: class
+   action: list.
