@@ -12,11 +12,26 @@ public class FileOutputStreamDemo extends Execute{
 		
 		echo("nhap noi dung can ghi vao file\n>");
 		String content = s.nextLine();
-		byte[] byteContent = content.getBytes();	
 		
 		try {
-			FileOutputStream f = new FileOutputStream(fileName, true);
-			f.write(byteContent);
+			BufferedWriter f = new BufferedWriter(new FileWriter(fileName));
+			f.write(content);
+			f.close();
+			echo("thanh cong");
+		} catch (IOException e) {
+			echo(e);
+		} finally {
+			echo("end");
+			s.close();
+		}
+		
+		try {
+			BufferedReader f = new BufferedReader(new FileReader(fileName));
+			String line = f.readLine();
+			while (line != null) {
+				System.out.println(line);
+				line = f.readLine();
+			}
 			f.close();
 			echo("thanh cong");
 		} catch (IOException e) {
