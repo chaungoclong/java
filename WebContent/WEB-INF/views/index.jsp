@@ -6,25 +6,37 @@
 
 	<m:layout>
 		<jsp:attribute name="content">
+			<div>
+				<form action='<c:url value="/doctor"></c:url>' method="get">
+					FROM:<input type="number" name="min" required> TO:<input type="number" name="max" required><button>SEARCH</button>
+				</form>
+			</div>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
 						<th>ID</th>
 						<th>NAME</th>
-						<th>ACTION</th>
+						<th>AGE</th>
+					    <th>ADDRESS</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:choose>
-						<c:when test="${listExams.size() != 0}">
-							<c:forEach items="${listExams}" var="exam">
+						<c:when test="${listDoctors.size() != 0}">
+							<c:forEach items="${listDoctors}" var="doctor">
 								<tr>
-									<td>${exam.id}</td>
-									<td>${exam.name}</td>
-									<td><a href='<c:url value="/exam/destroy?id=${exam.id}"/>' class="btn btn-danger">REMOVE</a></td>
+									<td>${doctor.id}</td>
+									<td>${doctor.name}</td>
+									<td>${doctor.age}</td>
+									<td>${doctor.address}</td>
 								</tr>
 							</c:forEach>
 						</c:when>
+						<c:otherwise>
+							<tr>
+								<td>EMPTY</td>
+							</tr>
+						</c:otherwise>
 					</c:choose>
 				</tbody>
 			</table>

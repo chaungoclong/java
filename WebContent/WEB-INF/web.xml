@@ -14,11 +14,11 @@
 	</welcome-file-list>
 
 	<servlet>
-		<servlet-name>exam</servlet-name>
-		<servlet-class>controller.ExamController</servlet-class>
+		<servlet-name>doctor</servlet-name>
+		<servlet-class>controller.DoctorController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>exam</servlet-name>
-		<url-pattern>/exam</url-pattern>
+		<servlet-name>doctor</servlet-name>
+		<url-pattern>/doctor</url-pattern>
 	</servlet-mapping>
 </web-app>
